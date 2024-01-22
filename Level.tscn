@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8ttl4c7dfhcy"]
+
+[ext_resource type="PackedScene" uid="uid://bn8uravhxqxhc" path="res://Andre.tscn" id="1_qs2w3"]
+[ext_resource type="PackedScene" uid="uid://cs30r3m8y8v5h" path="res://Crate.tscn" id="2_wgeg5"]
+[ext_resource type="PackedScene" uid="uid://dyjcrux3l3peb" path="res://Tilemap.tscn" id="3_dviqq"]
+[ext_resource type="PackedScene" uid="uid://crkb3t4vdifbb" path="res://Liselot.tscn" id="4_jlh8o"]
+[ext_resource type="PackedScene" uid="uid://bxloyfxpcyrx2" path="res://MovingBlock.tscn" id="5_i64wt"]
+
+[node name="Level" type="Node2D"]
+modulate = Color(0.890196, 0.878431, 0.8, 1)
+self_modulate = Color(0.890196, 0.878431, 0.8, 1)
+
+[node name="Crate" parent="." instance=ExtResource("2_wgeg5")]
+position = Vector2(460, 211)
+
+[node name="Level" parent="." instance=ExtResource("3_dviqq")]
+
+[node name="Andre" parent="." instance=ExtResource("1_qs2w3")]
+position = Vector2(24, 42)
+
+[node name="Liselot" parent="." instance=ExtResource("4_jlh8o")]
+position = Vector2(329, 46)
+
+[node name="MovingBlock" parent="." instance=ExtResource("5_i64wt")]
+position = Vector2(217, 156)
