@@ -27,7 +27,12 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
+	
+	var push_force = 5
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 
 
 
@@ -50,6 +55,9 @@ func _process(delta):
 		$AndreAnimations.flip_h = 0
 	if (velocity.x<0):
 		$AndreAnimations.flip_h = 1
+		
+	if (position.y > 1080):
+		position.y=0
 	#axis.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	#move_and_slide()
 	

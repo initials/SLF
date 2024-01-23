@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8ttl4c7dfhcy"]
+[gd_scene load_steps=9 format=3 uid="uid://b8ttl4c7dfhcy"]
 
-[ext_resource type="PackedScene" uid="uid://bn8uravhxqxhc" path="res://Andre.tscn" id="1_qs2w3"]
-[ext_resource type="PackedScene" uid="uid://cs30r3m8y8v5h" path="res://Crate.tscn" id="2_wgeg5"]
-[ext_resource type="PackedScene" uid="uid://dyjcrux3l3peb" path="res://Tilemap.tscn" id="3_dviqq"]
-[ext_resource type="PackedScene" uid="uid://crkb3t4vdifbb" path="res://Liselot.tscn" id="4_jlh8o"]
-[ext_resource type="PackedScene" uid="uid://bxloyfxpcyrx2" path="res://MovingBlock.tscn" id="5_i64wt"]
+[ext_resource type="PackedScene" uid="uid://dawjj77ig30j1" path="res://BackgroundTileMap.tscn" id="1_ayi1p"]
+[ext_resource type="PackedScene" uid="uid://bn8uravhxqxhc" path="res://nodes/Andre.tscn" id="1_qs2w3"]
+[ext_resource type="PackedScene" uid="uid://cs30r3m8y8v5h" path="res://nodes/Crate.tscn" id="2_wgeg5"]
+[ext_resource type="PackedScene" uid="uid://dyjcrux3l3peb" path="res://nodes/Tilemap.tscn" id="3_dviqq"]
+[ext_resource type="PackedScene" uid="uid://crkb3t4vdifbb" path="res://nodes/Liselot.tscn" id="4_jlh8o"]
+[ext_resource type="PackedScene" uid="uid://bxloyfxpcyrx2" path="res://nodes/MovingBlock.tscn" id="5_i64wt"]
+[ext_resource type="Texture2D" uid="uid://sx0xv33ddv6s" path="res://sprites/light.png" id="7_6hqmo"]
+[ext_resource type="PackedScene" uid="uid://qshy3234ibod" path="res://nodes/SugarBag.tscn" id="8_tca88"]
 
 [node name="Level" type="Node2D"]
 modulate = Color(0.890196, 0.878431, 0.8, 1)
 self_modulate = Color(0.890196, 0.878431, 0.8, 1)
+
+[node name="BackgroundTileMap" parent="." instance=ExtResource("1_ayi1p")]
 
 [node name="Crate" parent="." instance=ExtResource("2_wgeg5")]
 position = Vector2(460, 211)
@@ -22,4 +27,34 @@ position = Vector2(24, 42)
 position = Vector2(329, 46)
 
 [node name="MovingBlock" parent="." instance=ExtResource("5_i64wt")]
-position = Vector2(217, 156)
+position = Vector2(269, 75)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(3.05176e-05, -7.62939e-06)
+color = Color(0.729412, 0.729412, 0.729412, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="CanvasModulate"]
+position = Vector2(203.46, 11)
+rotation = -5.64614
+color = Color(0.65098, 0.65098, 0.65098, 1)
+energy = 0.35
+range_z_min = 0
+range_z_max = 890
+range_layer_max = 127
+shadow_enabled = true
+shadow_color = Color(1, 1, 1, 0.0941176)
+max_distance = 1935.0
+
+[node name="PointLight2D" type="PointLight2D" parent="CanvasModulate"]
+visible = false
+position = Vector2(70, 57)
+scale = Vector2(0.3238, 0.326823)
+texture = ExtResource("7_6hqmo")
+offset = Vector2(495.845, 0)
+texture_scale = 0.75
+
+[node name="SugarBag" parent="." instance=ExtResource("8_tca88")]
+position = Vector2(101, 42)
+
+[node name="SugarBag2" parent="." instance=ExtResource("8_tca88")]
+position = Vector2(345, 113)

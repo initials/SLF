@@ -1,5 +1,6 @@
-extends PathFollow2D
+extends Node2D
 
+var frameCounter = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,5 +9,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	progress_ratio+=delta*0.1
-	
+	frameCounter+=1
+	if (frameCounter%20==0):
+		modulate.r -= 0.1
+	if (modulate.r < 0):
+		modulate.r = 1
