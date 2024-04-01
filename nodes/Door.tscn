@@ -1,11 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbegfounfd2ob"]
+[gd_scene load_steps=8 format=3 uid="uid://cbegfounfd2ob"]
 
 [ext_resource type="Texture2D" uid="uid://dsfnfvtvdjymx" path="res://sprites/exit.png" id="1_8g5c2"]
 [ext_resource type="Script" path="res://nodes/Door.gd" id="1_cbm8c"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipxop"]
+atlas = ExtResource("1_8g5c2")
+region = Rect2(0, 110, 66, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd476"]
+atlas = ExtResource("1_8g5c2")
+region = Rect2(66, 110, 66, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4ndg"]
+atlas = ExtResource("1_8g5c2")
+region = Rect2(132, 110, 66, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn7ue"]
+atlas = ExtResource("1_8g5c2")
+region = Rect2(198, 110, 66, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1tbdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipxop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd476")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4ndg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn7ue")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
 [node name="Sprite2D" type="Sprite2D"]
-position = Vector2(-2, -54)
+position = Vector2(-2, -55)
 texture = ExtResource("1_8g5c2")
 hframes = 4
 vframes = 3
 script = ExtResource("1_cbm8c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_1tbdq")
+autoplay = "default"

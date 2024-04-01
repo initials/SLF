@@ -1,4 +1,4 @@
-extends Node2D
+extends Sprite2D
 
 
 func _input(event):

@@ -39,9 +39,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Sprite2D" type="Sprite2D"]
-script = ExtResource("1_hw8uc")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 position = Vector2(1, -54)
 sprite_frames = SubResource("SpriteFrames_i77y1")
+script = ExtResource("1_hw8uc")
