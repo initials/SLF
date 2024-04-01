@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbegfounfd2ob"]
+[gd_scene load_steps=8 format=3 uid="uid://cbegfounfd2ob"]
 
 [ext_resource type="Texture2D" uid="uid://dsfnfvtvdjymx" path="res://sprites/exit.png" id="1_8g5c2"]
 [ext_resource type="Script" path="res://nodes/Door.gd" id="1_cbm8c"]
-[ext_resource type="AudioStream" uid="uid://bg6iy2dwde40s" path="res://Sounds/openDoor.wav" id="3_7sjbw"]
-[ext_resource type="AudioStream" uid="uid://bboehrod1ymsj" path="res://Sounds/closeDoor.wav" id="4_8k3yp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ipxop"]
 atlas = ExtResource("1_8g5c2")
@@ -53,9 +51,3 @@ visible = false
 position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_1tbdq")
 autoplay = "default"
-
-[node name="OpenDoor" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_7sjbw")
-
-[node name="CloseDoor" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_8k3yp")
