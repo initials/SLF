@@ -1,7 +1,7 @@
-extends "res://nodes/ComputerControlledPlayer.gd"
+extends "res://nodes/Characters/ComputerControlledPlayer.gd"
 
 func _init():
-	SPEED=125
+	SPEED=64
 	
 func _ready():
 	pass # Replace with function body.

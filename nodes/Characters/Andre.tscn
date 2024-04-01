@@ -1,7 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://bn8uravhxqxhc"]
+[gd_scene load_steps=34 format=3 uid="uid://ud07ruolpycm"]
 
 [ext_resource type="Texture2D" uid="uid://38rjytv6ocor" path="res://sprites/andre.png" id="1_acdj1"]
-[ext_resource type="Script" path="res://nodes/Andre.gd" id="1_txa0f"]
+[ext_resource type="Script" path="res://nodes/Characters/Andre.gd" id="1_txa0f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu86n"]
 atlas = ExtResource("1_acdj1")
@@ -233,10 +233,10 @@ size = Vector2(6, 10)
 [node name="Andre" type="CharacterBody2D"]
 script = ExtResource("1_txa0f")
 
-[node name="AndreAnimations" type="AnimatedSprite2D" parent="."]
+[node name="CharacterAnimations" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_qvb74")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

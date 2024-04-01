@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbegfounfd2ob"]
+
+[ext_resource type="Texture2D" uid="uid://dsfnfvtvdjymx" path="res://sprites/exit.png" id="1_8g5c2"]
+[ext_resource type="Script" path="res://nodes/Door.gd" id="1_cbm8c"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(-2, -54)
+texture = ExtResource("1_8g5c2")
+hframes = 4
+vframes = 3
+script = ExtResource("1_cbm8c")

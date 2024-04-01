@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmmiu3w1oqk0m"]
+
+[ext_resource type="Texture2D" uid="uid://yynfxm01d3tg" path="res://sprites/Inspector.png" id="1_cc0vc"]
+[ext_resource type="Script" path="res://nodes/Characters/Inspector.gd" id="1_w5j2a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t73gj"]
+atlas = ExtResource("1_cc0vc")
+region = Rect2(0, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp7oo"]
+atlas = ExtResource("1_cc0vc")
+region = Rect2(25, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbonh"]
+atlas = ExtResource("1_cc0vc")
+region = Rect2(50, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hovmf"]
+atlas = ExtResource("1_cc0vc")
+region = Rect2(75, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tij4c"]
+atlas = ExtResource("1_cc0vc")
+region = Rect2(100, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yqef"]
+atlas = ExtResource("1_cc0vc")
+region = Rect2(125, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb0jj"]
+atlas = ExtResource("1_cc0vc")
+region = Rect2(150, 0, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qvb74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t73gj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp7oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbonh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hovmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tij4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yqef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb0jj")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11y5g"]
+size = Vector2(6, 10)
+
+[node name="Inspector" type="CharacterBody2D"]
+script = ExtResource("1_w5j2a")
+
+[node name="CharacterAnimations" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -12.5)
+sprite_frames = SubResource("SpriteFrames_qvb74")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_11y5g")

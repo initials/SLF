@@ -6,7 +6,7 @@ var JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var direction = -1
+var direction = 1
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -14,8 +14,8 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
 		
 
 
@@ -31,17 +31,16 @@ func _physics_process(delta):
 		position.x = 1
 		#$SndTalk.play()
 		
-	if (position.x > sizeX):
+	if (position.x > sizeX-10):
 		direction *= -1
-		position.x = sizeX - 5
+		position.x = sizeX - 15
 		#$SndTalk.play()
 		
-		
-	if direction:
-		velocity.x = direction * SPEED
-		
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	velocity.x = direction * SPEED
+	#if direction:
+		#velocity.x = direction * SPEED
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
 	

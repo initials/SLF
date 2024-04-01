@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://ce4uyl01xg4om"]
 
-[ext_resource type="Script" path="res://nodes/ComputerControlledPlayer.gd" id="1_ijkp2"]
+[ext_resource type="Script" path="res://nodes/Characters/ComputerControlledPlayer.gd" id="1_ijkp2"]
 [ext_resource type="Texture2D" uid="uid://38rjytv6ocor" path="res://sprites/andre.png" id="1_irnp8"]
 [ext_resource type="AudioStream" uid="uid://bigphfa2740dd" path="res://Sounds/SndTalk.wav" id="3_272n4"]
 [ext_resource type="Texture2D" uid="uid://efqqb62wt64g" path="res://sprites/Worker.png" id="3_uy5ls"]
@@ -288,7 +288,7 @@ position = Vector2(0, -12.5)
 sprite_frames = SubResource("SpriteFrames_4irac")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.101539
+frame_progress = 0.647366
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
