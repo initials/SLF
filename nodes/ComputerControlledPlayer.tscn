@@ -282,12 +282,13 @@ size = Vector2(6, 10)
 [node name="ComputerControlledPlayer" type="CharacterBody2D"]
 script = ExtResource("1_ijkp2")
 
-[node name="AndreAnimations" type="AnimatedSprite2D" parent="."]
+[node name="CharacterAnimations" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(0, -12.5)
 sprite_frames = SubResource("SpriteFrames_4irac")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.263641
+frame_progress = 0.101539
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)

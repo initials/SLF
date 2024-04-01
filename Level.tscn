@@ -15,7 +15,6 @@ modulate = Color(0.890196, 0.878431, 0.8, 1)
 self_modulate = Color(0.890196, 0.878431, 0.8, 1)
 
 [node name="BackgroundTileMap" parent="." instance=ExtResource("1_ayi1p")]
-scale = Vector2(0.435, 0.435)
 
 [node name="Crate" parent="." instance=ExtResource("2_wgeg5")]
 position = Vector2(460, 210)
@@ -73,7 +72,9 @@ position = Vector2(365, 478)
 collision_layer = 0
 
 [node name="Worker3" parent="." instance=ExtResource("10_xereg")]
+modulate = Color(1, 1, 0, 1)
 position = Vector2(158, 475)
+scale = Vector2(2, 2)
 collision_layer = 0
 
 [node name="Worker4" parent="." instance=ExtResource("10_xereg")]

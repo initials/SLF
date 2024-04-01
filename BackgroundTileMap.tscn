@@ -217,12 +217,12 @@ sources/0 = SubResource("TileSetAtlasSource_1dwjc")
 [node name="BackgroundTileMap" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 2207.0
-offset_bottom = 1322.0
+offset_right = 960.0
+offset_bottom = 540.0
 color = Color(0.752941, 0.733333, 0.623529, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(560, 600)
+position = Vector2(320, 60)
 tile_set = SubResource("TileSet_jjfkt")
 rendering_quadrant_size = 80
 format = 2

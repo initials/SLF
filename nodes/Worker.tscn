@@ -282,7 +282,7 @@ size = Vector2(6, 10)
 [node name="Worker" type="CharacterBody2D"]
 script = ExtResource("1_glwlg")
 
-[node name="AndreAnimations" type="AnimatedSprite2D" parent="."]
+[node name="CharacterAnimations" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12.5)
 sprite_frames = SubResource("SpriteFrames_sirb5")
 animation = &"run"
