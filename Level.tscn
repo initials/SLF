@@ -36,13 +36,13 @@ self_modulate = Color(0.890196, 0.878431, 0.8, 1)
 position = Vector2(0, -20)
 
 [node name="Door" parent="." instance=ExtResource("13_7wmiw")]
-position = Vector2(50, 35)
+position = Vector2(44, 91)
 
 [node name="Door2" parent="." instance=ExtResource("13_7wmiw")]
-position = Vector2(921, 35)
+position = Vector2(925, 90)
 
 [node name="Door4" parent="." instance=ExtResource("13_7wmiw")]
-position = Vector2(174, 464)
+position = Vector2(173, 520)
 
 [node name="Crate" parent="." instance=ExtResource("2_wgeg5")]
 position = Vector2(76, 490)
@@ -68,7 +68,7 @@ scale = Vector2(2, 2)
 collision_layer = 0
 
 [node name="Chef" parent="." instance=ExtResource("1_qs2w3")]
-position = Vector2(276, 494)
+position = Vector2(65, 508)
 scale = Vector2(2, 2)
 collision_layer = 0
 

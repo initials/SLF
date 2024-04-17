@@ -19,3 +19,10 @@ func _input(event):
 		#print (to_local(event.position))
 		#
 
+
+#func _on_door_entered(area):
+	#print (area.get_name())
+#func _on_door_area_2d_area_entered(area):
+	#print (area.get_name())
+#func _on_door_area_2d_mouse_entered():
+	#print ("_on_door_area_2d_mouse_entered")

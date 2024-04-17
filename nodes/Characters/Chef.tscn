@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bn8uravhxqxhc"]
+[gd_scene load_steps=13 format=3 uid="uid://bn8uravhxqxhc"]
 
 [ext_resource type="Script" path="res://nodes/Characters/Chef.gd" id="1_txa0f"]
 [ext_resource type="Texture2D" uid="uid://bt1j5wlbc8nt1" path="res://sprites/Chef.png" id="2_i1syo"]
@@ -73,6 +73,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11y5g"]
 size = Vector2(6, 10)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_aotjc"]
+radius = 8.0
+
 [node name="Chef" type="CharacterBody2D"]
 script = ExtResource("1_txa0f")
 
@@ -85,3 +88,9 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_11y5g")
+
+[node name="ChefArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChefArea2D"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_aotjc")
