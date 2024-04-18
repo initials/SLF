@@ -7,10 +7,11 @@ func _input(event):
 			if (frame==0):
 				frame = 2
 				$CloseDoor.play()
+				self.get_parent().get_node("CollisionShape2D").disabled = true
 			elif (frame==2):
 				frame=0
 				$OpenDoor.play()
-
+				self.get_parent().get_node("CollisionShape2D").disabled = false
 #func _input(event):
 	#if event is InputEventMouseButton and event.pressed:
 		##if get_rect().has_point(to_local(event.position)):

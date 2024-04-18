@@ -35,20 +35,14 @@ self_modulate = Color(0.890196, 0.878431, 0.8, 1)
 [node name="BackgroundTileMap" parent="." instance=ExtResource("1_ayi1p")]
 position = Vector2(0, -20)
 
-[node name="DoorTop" parent="." instance=ExtResource("13_7wmiw")]
+[node name="Door" parent="." instance=ExtResource("13_7wmiw")]
 position = Vector2(44, 91)
 
-[node name="Door" parent="." instance=ExtResource("13_7wmiw")]
+[node name="Door2" parent="." instance=ExtResource("13_7wmiw")]
 position = Vector2(925, 90)
 
-[node name="Door2" parent="." instance=ExtResource("13_7wmiw")]
-position = Vector2(173, 520)
-
-[node name="Door3" parent="." instance=ExtResource("13_7wmiw")]
-position = Vector2(286, 520)
-
 [node name="Door4" parent="." instance=ExtResource("13_7wmiw")]
-position = Vector2(756, 209)
+position = Vector2(173, 520)
 
 [node name="Crate" parent="." instance=ExtResource("2_wgeg5")]
 position = Vector2(76, 490)
@@ -63,7 +57,7 @@ position = Vector2(0, 0)
 position = Vector2(299, 249)
 scale = Vector2(2, 2)
 
-[node name="Liselot" parent="." groups=["Characters"] instance=ExtResource("4_jlh8o")]
+[node name="Liselot" parent="." instance=ExtResource("4_jlh8o")]
 position = Vector2(901, 514)
 scale = Vector2(2, 2)
 script = SubResource("GDScript_p1m3o")
@@ -73,12 +67,12 @@ position = Vector2(469, 255)
 scale = Vector2(2, 2)
 collision_layer = 0
 
-[node name="Chef" parent="." groups=["Characters"] instance=ExtResource("1_qs2w3")]
+[node name="Chef" parent="." instance=ExtResource("1_qs2w3")]
 position = Vector2(65, 508)
 scale = Vector2(2, 2)
 collision_layer = 0
 
-[node name="Andre" parent="." groups=["Characters"] instance=ExtResource("11_6bnjp")]
+[node name="Andre" parent="." instance=ExtResource("11_6bnjp")]
 position = Vector2(408, 485)
 scale = Vector2(2, 2)
 collision_layer = 0
@@ -120,3 +114,6 @@ position = Vector2(666, 252)
 position = Vector2(616, 459)
 scale = Vector2(2, 2)
 collision_layer = 0
+
+[node name="DoorArea2D" parent="." instance=ExtResource("13_7wmiw")]
+position = Vector2(286, 520)
