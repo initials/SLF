@@ -10,17 +10,17 @@ func _ready():
 func _process(delta):
 	pass
 
-func _physics_process(delta):
-
-	for body in get_overlapping_bodies():
-			#print(body.name, is_in_group("Characters") )
-			if (body.name!="TileMap"):
-				print(body)
-			if body.is_in_group("Characters"):
-				print("collisions!")
-				var pos = self.get_parent().get_node("DoorTop").position
-				print(pos)
-				body.get_parent().position = pos
+#func _physics_process(delta):
+#
+	#for body in get_overlapping_bodies():
+			##print(body.name, is_in_group("Characters") )
+			#if (body.name!="TileMap"):
+				#print(body)
+			#if body.is_in_group("Characters"):
+				#print("collisions!")
+				#var pos = self.get_parent().get_node("DoorTop").position
+				#print(pos)
+				#body.get_parent().position = pos
 
 func _on_mouse_entered():
 	print ("_on_mouse_entered")
@@ -29,10 +29,10 @@ func _on_mouse_entered():
 
 
 func _on_area_entered(area):
-	print(self.get_overlapping_bodies())
-	if _door_is_open():
+
+	if _door_is_open() && self.name != "DoorTop":
 		var pos = self.get_parent().get_node("DoorTop").position
-		#print(pos)
+		pos.y = pos.y-10
 		area.get_parent().position = pos
 		
 func findByClass(node: Node, className : String, result : Array) -> void:
