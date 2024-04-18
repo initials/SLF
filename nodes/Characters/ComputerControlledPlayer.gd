@@ -23,7 +23,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#var direction = Input.get_axis("move_left", "move_right")
 
-	var sizeX = get_viewport().size.x / 2
+	var sizeX = get_viewport().size.x 
 	#print (get_viewport().size, get_viewport().sdf_oversize)
 
 	if (position.x < 0):

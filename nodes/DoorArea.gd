@@ -30,10 +30,15 @@ func _on_mouse_entered():
 
 func _on_area_entered(area):
 
-	if _door_is_open() && self.name != "DoorTop":
-		var pos = self.get_parent().get_node("DoorTop").position
+	if _door_is_open() && self.name != "LDoorTop" && self.name != "RDoorTop":
+		var prefix = "L"
+		if (position.x > get_viewport().size.x / 2):
+			prefix = "R"
+		var pos = self.get_parent().get_node(prefix + "DoorTop").position
+		print (pos, self.get_parent().get_node(prefix + "DoorTop"))
 		pos.y = pos.y-10
 		area.get_parent().position = pos
+		$Teleport.play()
 		
 func findByClass(node: Node, className : String, result : Array) -> void:
 	if node.is_class(className) :
