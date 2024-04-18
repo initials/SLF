@@ -6,7 +6,6 @@ func _init():
 func _ready():
 	pass # Replace with function body.
 
-
-
-
-
+func teleport():
+	print("Andre Teleport")
+	super.teleport()

@@ -76,7 +76,7 @@ stream = ExtResource("4_8k3yp")
 [node name="Teleport" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-2, -55)
 stream = ExtResource("6_mvlpb")
-volume_db = -21.047
+volume_db = -63.611
 pitch_scale = 0.95
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

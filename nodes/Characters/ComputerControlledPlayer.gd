@@ -4,7 +4,6 @@ extends CharacterBody2D
 var SPEED = 50.0
 var JUMP_VELOCITY = -400.0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 1
 
@@ -49,11 +48,6 @@ func _physics_process(delta):
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
-
-
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
@@ -77,7 +71,8 @@ func _process(delta):
 	#axis.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	#move_and_slide()
 	
-
+func teleport():
+	print ("Teleport", self.name)
 
 
 
