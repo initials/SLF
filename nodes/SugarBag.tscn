@@ -3,20 +3,16 @@
 [ext_resource type="Script" path="res://nodes/SugarBag.gd" id="1_4dbh6"]
 [ext_resource type="Texture2D" uid="uid://gv4tqyo1d7qo" path="res://sprites/smallSugarBag.png" id="1_u46u0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ev4rc"]
-size = Vector2(20, 19)
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3llr"]
+radius = 9.0
 
 [node name="SugarBag" type="Node2D"]
 script = ExtResource("1_4dbh6")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-mass = 0.1
-linear_damp_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_ev4rc")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionShape2D"]
-position = Vector2(0, -2.5)
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_u46u0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h3llr")

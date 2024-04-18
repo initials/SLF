@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8ttl4c7dfhcy"]
+[gd_scene load_steps=16 format=3 uid="uid://b8ttl4c7dfhcy"]
 
 [ext_resource type="PackedScene" uid="uid://dawjj77ig30j1" path="res://BackgroundTileMap.tscn" id="1_ayi1p"]
 [ext_resource type="PackedScene" uid="uid://bn8uravhxqxhc" path="res://nodes/Characters/Chef.tscn" id="1_qs2w3"]
+[ext_resource type="Script" path="res://Level.gd" id="1_sdck5"]
 [ext_resource type="PackedScene" uid="uid://cs30r3m8y8v5h" path="res://nodes/Crate.tscn" id="2_wgeg5"]
 [ext_resource type="PackedScene" uid="uid://dyjcrux3l3peb" path="res://nodes/Tilemap.tscn" id="3_dviqq"]
 [ext_resource type="PackedScene" uid="uid://7owossrqskbs" path="res://nodes/Characters/Army.tscn" id="4_62323"]
@@ -31,7 +32,7 @@ func _ready():
 [node name="Level1" type="Node2D"]
 modulate = Color(0.890196, 0.878431, 0.8, 1)
 self_modulate = Color(0.890196, 0.878431, 0.8, 1)
-metadata/_edit_vertical_guides_ = [898.0, 57.0]
+script = ExtResource("1_sdck5")
 
 [node name="BackgroundTileMap" parent="." instance=ExtResource("1_ayi1p")]
 position = Vector2(0, -20)
@@ -43,16 +44,16 @@ position = Vector2(44, 91)
 position = Vector2(925, 90)
 
 [node name="Door2" parent="." instance=ExtResource("13_7wmiw")]
-position = Vector2(44, 520)
+position = Vector2(173, 520)
 
 [node name="Door3" parent="." instance=ExtResource("13_7wmiw")]
-position = Vector2(923, 520)
+position = Vector2(860, 519)
 
 [node name="Crate" parent="." instance=ExtResource("2_wgeg5")]
-position = Vector2(55, 370)
+position = Vector2(55, 379)
 
 [node name="Crate2" parent="." instance=ExtResource("2_wgeg5")]
-position = Vector2(899, 370)
+position = Vector2(724, 488)
 
 [node name="Level-first" parent="." instance=ExtResource("3_dviqq")]
 position = Vector2(0, 0)
@@ -62,7 +63,7 @@ position = Vector2(299, 249)
 scale = Vector2(2, 2)
 
 [node name="Liselot" parent="." groups=["Characters"] instance=ExtResource("4_jlh8o")]
-position = Vector2(755, 508)
+position = Vector2(901, 514)
 scale = Vector2(2, 2)
 script = SubResource("GDScript_p1m3o")
 
@@ -72,7 +73,7 @@ scale = Vector2(2, 2)
 collision_layer = 0
 
 [node name="Chef" parent="." groups=["Characters"] instance=ExtResource("1_qs2w3")]
-position = Vector2(201, 517)
+position = Vector2(65, 508)
 scale = Vector2(2, 2)
 collision_layer = 0
 
@@ -82,7 +83,7 @@ scale = Vector2(2, 2)
 collision_layer = 0
 
 [node name="MovingBlock" parent="." instance=ExtResource("5_i64wt")]
-position = Vector2(477, 327)
+position = Vector2(430, -43)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -118,10 +119,3 @@ position = Vector2(359, 275)
 position = Vector2(616, 459)
 scale = Vector2(2, 2)
 collision_layer = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 93.0
-offset_top = 8.0
-offset_right = 308.0
-offset_bottom = 48.0
-text = "score"

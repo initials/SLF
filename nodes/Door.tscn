@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://nodes/DoorArea.gd" id="1_8g2cu"]
 [ext_resource type="Texture2D" uid="uid://dsfnfvtvdjymx" path="res://sprites/exit.png" id="1_8g5c2"]
 [ext_resource type="Script" path="res://nodes/Door.gd" id="1_cbm8c"]
-[ext_resource type="AudioStream" uid="uid://bg6iy2dwde40s" path="res://Sounds/openDoor.wav" id="3_7sjbw"]
-[ext_resource type="AudioStream" uid="uid://bboehrod1ymsj" path="res://Sounds/closeDoor.wav" id="4_8k3yp"]
+[ext_resource type="AudioStream" uid="uid://cxklioe2jduo3" path="res://Sounds/openDoor2.wav" id="4_abjro"]
+[ext_resource type="AudioStream" uid="uid://dmkqq2d2ti5al" path="res://Sounds/closeDoor2.wav" id="5_udmoh"]
 [ext_resource type="AudioStream" uid="uid://biie8qv1684ce" path="res://Sounds/SndOnShoulders.mp3" id="6_mvlpb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvduu"]
-size = Vector2(38, 60)
+size = Vector2(17, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ipxop"]
 atlas = ExtResource("1_8g5c2")
@@ -50,7 +50,7 @@ animations = [{
 script = ExtResource("1_8g2cu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, -31)
+position = Vector2(-6.5, -31)
 shape = SubResource("RectangleShape2D_gvduu")
 
 [node name="Door" type="Sprite2D" parent="."]
@@ -67,11 +67,11 @@ sprite_frames = SubResource("SpriteFrames_1tbdq")
 autoplay = "default"
 
 [node name="OpenDoor" type="AudioStreamPlayer2D" parent="Door"]
-stream = ExtResource("3_7sjbw")
+stream = ExtResource("4_abjro")
 
 [node name="CloseDoor" type="AudioStreamPlayer2D" parent="Door"]
 position = Vector2(2, 56)
-stream = ExtResource("4_8k3yp")
+stream = ExtResource("5_udmoh")
 
 [node name="Teleport" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-2, -55)
