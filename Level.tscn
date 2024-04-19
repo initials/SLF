@@ -82,7 +82,7 @@ scale = Vector2(2, 2)
 collision_layer = 0
 
 [node name="MovingBlock" parent="." instance=ExtResource("5_i64wt")]
-position = Vector2(477, 327)
+position = Vector2(477, 83)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false

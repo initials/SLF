@@ -5,9 +5,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_220rg"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -141, 3, 0, 0, 0, 0, -138, 50, 0, 0, 0, 0, 1, 51, 0, 0, 0, 0, 130, 53, 0, 0, 0, 0, 132, -3, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -64, 0, 0, 0, 0, 0, -64, 64, 0, 0, 0, 0, 64, 64, 0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 8
+point_count = 7
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3jol"]
 size = Vector2(39, 34)
@@ -18,7 +18,7 @@ size = Vector2(39, 34)
 curve = SubResource("Curve2D_220rg")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(0.0989685, -0.00210571)
+position = Vector2(0.171875, 0)
 rotates = false
 script = ExtResource("2_2t6d2")
 
