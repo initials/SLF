@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://qshy3234ibod"]
+[gd_scene load_steps=5 format=3 uid="uid://qshy3234ibod"]
 
 [ext_resource type="Script" path="res://nodes/SugarBag.gd" id="1_4dbh6"]
 [ext_resource type="Texture2D" uid="uid://gv4tqyo1d7qo" path="res://sprites/smallSugarBag.png" id="1_u46u0"]
+[ext_resource type="AudioStream" uid="uid://c3nlx887xg7aw" path="res://Sounds/ping2.mp3" id="3_6yw18"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h3llr"]
-radius = 9.0
+radius = 12.0
 
 [node name="SugarBag" type="Node2D"]
 script = ExtResource("1_4dbh6")
@@ -16,3 +17,9 @@ texture = ExtResource("1_u46u0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_h3llr")
+
+[node name="Collected" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6yw18")
+volume_db = 0.05
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

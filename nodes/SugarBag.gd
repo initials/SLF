@@ -14,3 +14,12 @@ func _process(delta):
 		modulate.r -= 0.1
 	if (modulate.r < 0):
 		modulate.r = 1
+
+
+func teleport():
+	pass
+
+func _on_area_2d_area_entered(area):
+	#if self.name != "Andre" :
+	queue_free()
+
