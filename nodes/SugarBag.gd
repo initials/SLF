@@ -20,6 +20,10 @@ func teleport():
 	pass
 
 func _on_area_2d_area_entered(area):
-	#if self.name != "Andre" :
-	queue_free()
+	$Collected.play()
+	self.get_child(0).visible = 0
 
+
+func _on_collected_finished():
+	
+	queue_free()
