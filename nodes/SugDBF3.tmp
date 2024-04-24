@@ -1,13 +1,10 @@
-[gd_scene load_steps=52 format=3 uid="uid://qshy3234ibod"]
+[gd_scene load_steps=51 format=3 uid="uid://qshy3234ibod"]
 
 [ext_resource type="Script" path="res://nodes/SugarBag.gd" id="1_4dbh6"]
 [ext_resource type="Texture2D" uid="uid://gv4tqyo1d7qo" path="res://sprites/smallSugarBag.png" id="1_u46u0"]
 [ext_resource type="AudioStream" uid="uid://c3nlx887xg7aw" path="res://Sounds/ping2.mp3" id="3_6yw18"]
 [ext_resource type="Texture2D" uid="uid://djwuvg64a8qlp" path="res://sprites/magic/58.png" id="4_e2t6p"]
 [ext_resource type="Texture2D" uid="uid://m3d58sd6h8yb" path="res://sprites/magic/38.png" id="4_lxgmj"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5olif"]
-bounce = 0.35
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6gp2k"]
 size = Vector2(23, 23)
@@ -322,23 +319,28 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="SugarBagRigidBody2D" type="RigidBody2D"]
-collision_layer = 6
-collision_mask = 5
-physics_material_override = SubResource("PhysicsMaterial_5olif")
+[node name="SugarBag" type="Node2D"]
 script = ExtResource("1_4dbh6")
 
-[node name="SugarBagCollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="SugarBagRigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 6
+collision_mask = 5
+
+[node name="SugarBagCollisionShape2D" type="CollisionShape2D" parent="SugarBagRigidBody2D"]
 position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_6gp2k")
 
-[node name="SugarBagArea2D" type="Area2D" parent="SugarBagCollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="SugarBagRigidBody2D/SugarBagCollisionShape2D"]
+position = Vector2(0.5, -1.5)
+texture = ExtResource("1_u46u0")
+
+[node name="SugarBagArea2D" type="Area2D" parent="SugarBagRigidBody2D/SugarBagCollisionShape2D"]
 position = Vector2(0.5, -1.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SugarBagCollisionShape2D/SugarBagArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SugarBagRigidBody2D/SugarBagCollisionShape2D/SugarBagArea2D"]
 shape = SubResource("CircleShape2D_h3llr")
 
-[node name="Magic" type="AnimatedSprite2D" parent="."]
+[node name="Magic" type="AnimatedSprite2D" parent="SugarBagRigidBody2D"]
 sprite_frames = SubResource("SpriteFrames_w7wlu")
 animation = &"reverse"
 autoplay = "default"
@@ -347,8 +349,5 @@ autoplay = "default"
 stream = ExtResource("3_6yw18")
 volume_db = 0.05
 
-[node name="SugarSprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_u46u0")
-
-[connection signal="area_entered" from="SugarBagCollisionShape2D/SugarBagArea2D" to="." method="_on_sugar_bag_area_2d_area_entered"]
+[connection signal="area_entered" from="SugarBagRigidBody2D/SugarBagCollisionShape2D/SugarBagArea2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="finished" from="Collected" to="." method="_on_collected_finished"]

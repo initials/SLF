@@ -34,6 +34,7 @@ modulate = Color(0.890196, 0.878431, 0.8, 1)
 self_modulate = Color(0.890196, 0.878431, 0.8, 1)
 script = ExtResource("1_t3d5k")
 metadata/_edit_vertical_guides_ = [898.0, 57.0]
+metadata/_edit_group_ = true
 
 [node name="BackgroundTileMap" parent="." instance=ExtResource("1_ayi1p")]
 position = Vector2(0, -20)

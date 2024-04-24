@@ -7,11 +7,7 @@ var magic = preload("res://nodes/Magic.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var crate = c.instantiate()
-	crate.position.x = 100
-	crate.position.y = 100
-	
-	call_deferred("add_child", crate)
+	pass
 
 
 
@@ -23,8 +19,8 @@ func _process(delta):
 
 func create_sugar_bag():
 	var crate = sugar.instantiate()
-	crate.position.x = randf() * 1000
-	crate.position.y = randf() * 1000
+	crate.position.x = 300 + (randf()*10)
+	crate.position.y = 0
 	
 	call_deferred("add_child", crate)
 	
@@ -33,3 +29,11 @@ func create_sugar_bag():
 	m.position.y = crate.position.y
 	
 	call_deferred("add_child", m)
+
+func create_crate():
+	var crate = c.instantiate()
+	crate.position.x = 100
+	crate.position.y = 100
+	
+	call_deferred("add_child", crate)
+	

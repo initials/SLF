@@ -89,8 +89,8 @@ autoplay = "idle"
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_11y5g")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="InspectorArea2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InspectorArea2D"]
 position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_ca617")
