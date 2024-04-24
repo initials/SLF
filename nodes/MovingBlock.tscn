@@ -5,12 +5,12 @@
 
 [sub_resource type="Curve2D" id="Curve2D_220rg"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -64, 0, 0, 0, 0, 0, -64, 64, 0, 0, 0, 0, 64, 64, 0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 160, 0, 0, 0, 0, 0, 0)
 }
-point_count = 7
+point_count = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3jol"]
-size = Vector2(39, 34)
+size = Vector2(80, 36.1692)
 
 [node name="MovingBlock" type="Node2D"]
 
@@ -18,7 +18,7 @@ size = Vector2(39, 34)
 curve = SubResource("Curve2D_220rg")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(0.171875, 0)
+position = Vector2(0, -0.112305)
 rotates = false
 script = ExtResource("2_2t6d2")
 
@@ -27,8 +27,9 @@ position = Vector2(-0.239014, -0.169189)
 sync_to_physics = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/AnimatableBody2D"]
+scale = Vector2(2, 1)
 texture = ExtResource("1_txfan")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/AnimatableBody2D"]
-position = Vector2(0.5, -3)
+position = Vector2(0.067139, -1.91541)
 shape = SubResource("RectangleShape2D_g3jol")

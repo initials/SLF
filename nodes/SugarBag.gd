@@ -35,8 +35,10 @@ func _on_collected_finished():
 
 
 func _on_sugar_bag_area_2d_area_entered(area):
+	
 	#print("***", self.get_child(0).name, " ", area.name)
 	if area.name != "SugarBagArea2D":
+		Global.score += 1
 		$Magic.play("reverse")	
 		$Collected.play()
 		get_node("SugarSprite2D").visible = 0
