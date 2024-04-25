@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://m3d58sd6h8yb" path="res://sprites/magic/38.png" id="4_lxgmj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5olif"]
-bounce = 0.35
+bounce = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6gp2k"]
 size = Vector2(23, 23)
@@ -339,6 +339,8 @@ position = Vector2(0.5, -1.5)
 shape = SubResource("CircleShape2D_h3llr")
 
 [node name="Magic" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.105882)
+self_modulate = Color(1, 0, 0, 1)
 sprite_frames = SubResource("SpriteFrames_w7wlu")
 animation = &"reverse"
 autoplay = "default"
