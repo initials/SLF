@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxloyfxpcyrx2"]
+[gd_scene load_steps=7 format=3 uid="uid://bxloyfxpcyrx2"]
 
 [ext_resource type="Texture2D" uid="uid://cex0w86rj7qi0" path="res://sprites/level1_specialBlock.png" id="1_txfan"]
-[ext_resource type="Script" path="res://nodes/MovingBlockScript.gd" id="2_2t6d2"]
-[ext_resource type="Script" path="res://nodes/MovingBlockSprite2D.gd" id="3_sgyxg"]
+[ext_resource type="Script" path="res://nodes/MovingBlocks/MovingBlockScript.gd" id="2_2t6d2"]
+[ext_resource type="Script" path="res://nodes/MovingBlocks/MovingBlockSprite2D.gd" id="3_sgyxg"]
+[ext_resource type="AudioStream" uid="uid://biie8qv1684ce" path="res://Sounds/SndOnShoulders.mp3" id="4_bruk2"]
 
 [sub_resource type="Curve2D" id="Curve2D_220rg"]
 _data = {
@@ -29,6 +30,10 @@ sync_to_physics = false
 scale = Vector2(2, 1)
 texture = ExtResource("1_txfan")
 script = ExtResource("3_sgyxg")
+
+[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Path2D/MovingBlockPathFollow2D/AnimatableBody2D/MovingBlockSprite2D"]
+scale = Vector2(0.5, 1)
+stream = ExtResource("4_bruk2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/MovingBlockPathFollow2D/AnimatableBody2D"]
 shape = SubResource("RectangleShape2D_g3jol")

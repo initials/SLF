@@ -11,5 +11,5 @@ func _process(delta):
 	pass
 	
 func _on_door_entered(area):
-	print (area.get_name())
+	#print (area.get_name())
 	area.get_name().position.y = 1

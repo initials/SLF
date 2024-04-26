@@ -7,5 +7,5 @@ func _ready():
 	pass # Replace with function body.
 
 func teleport():
-	print("Andre Teleport")
+	#print("Andre Teleport")
 	super.teleport()

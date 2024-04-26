@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b8ttl4c7dfhcy"]
+[gd_scene load_steps=18 format=3 uid="uid://b8ttl4c7dfhcy"]
 
 [ext_resource type="PackedScene" uid="uid://dawjj77ig30j1" path="res://BackgroundTileMap.tscn" id="1_ayi1p"]
 [ext_resource type="PackedScene" uid="uid://bn8uravhxqxhc" path="res://nodes/Characters/Chef.tscn" id="1_qs2w3"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dyjcrux3l3peb" path="res://nodes/Tilemap.tscn" id="3_dviqq"]
 [ext_resource type="PackedScene" uid="uid://7owossrqskbs" path="res://nodes/Characters/Army.tscn" id="4_62323"]
 [ext_resource type="PackedScene" uid="uid://crkb3t4vdifbb" path="res://nodes/Characters/Liselot.tscn" id="4_jlh8o"]
-[ext_resource type="PackedScene" uid="uid://bxloyfxpcyrx2" path="res://nodes/MovingBlock.tscn" id="5_i64wt"]
+[ext_resource type="PackedScene" uid="uid://bxloyfxpcyrx2" path="res://nodes/MovingBlocks/MovingBlock.tscn" id="5_i64wt"]
 [ext_resource type="Texture2D" uid="uid://sx0xv33ddv6s" path="res://sprites/light.png" id="7_6hqmo"]
 [ext_resource type="PackedScene" uid="uid://qshy3234ibod" path="res://nodes/SugarBag.tscn" id="8_tca88"]
 [ext_resource type="PackedScene" uid="uid://gxdy2jl5gogh" path="res://nodes/Characters/Worker.tscn" id="10_xereg"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cbegfounfd2ob" path="res://nodes/Door.tscn" id="13_7wmiw"]
 [ext_resource type="PackedScene" uid="uid://cmmiu3w1oqk0m" path="res://nodes/Characters/Inspector.tscn" id="13_rrp52"]
 [ext_resource type="Script" path="res://Score.gd" id="15_davs0"]
+[ext_resource type="PackedScene" uid="uid://ce4uyl01xg4om" path="res://nodes/Characters/ComputerControlledPlayer.tscn" id="16_an0jq"]
 
 [sub_resource type="GDScript" id="GDScript_p1m3o"]
 script/source = "extends \"res://nodes/Characters/ComputerControlledPlayer.gd\"
@@ -130,3 +131,6 @@ offset_right = 308.0
 offset_bottom = 48.0
 text = "score Global.score"
 script = ExtResource("15_davs0")
+
+[node name="ComputerControlledPlayer" parent="." instance=ExtResource("16_an0jq")]
+position = Vector2(120, 240)

@@ -30,7 +30,7 @@ func teleport():
 
 
 func _on_collected_finished():
-	print("collected finished")
+	#print("collected finished")
 	queue_free()
 
 
