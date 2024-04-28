@@ -1,8 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://ud07ruolpycm"]
+[gd_scene load_steps=37 format=3 uid="uid://ud07ruolpycm"]
 
 [ext_resource type="Texture2D" uid="uid://38rjytv6ocor" path="res://sprites/andre.png" id="1_acdj1"]
 [ext_resource type="Script" path="res://nodes/Characters/Andre.gd" id="1_txa0f"]
-[ext_resource type="Script" path="res://nodes/Characters/CompControlledPlayerArea2D.gd" id="3_663xg"]
+[ext_resource type="AudioStream" uid="uid://bigphfa2740dd" path="res://Sounds/SndTalk.wav" id="3_b4lfg"]
+[ext_resource type="AudioStream" uid="uid://sweck2g003gf" path="res://Sounds/SndExp.mp3" id="3_b6pyf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu86n"]
 atlas = ExtResource("1_acdj1")
@@ -232,7 +233,7 @@ animations = [{
 size = Vector2(6, 10)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wo2su"]
-radius = 4.0
+radius = 13.0384
 
 [node name="Andre" type="CharacterBody2D"]
 script = ExtResource("1_txa0f")
@@ -248,8 +249,15 @@ position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_11y5g")
 
 [node name="PlayerArea2D" type="Area2D" parent="."]
-script = ExtResource("3_663xg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea2D"]
 position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_wo2su")
+
+[node name="SndStop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_b6pyf")
+
+[node name="SndGo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_b4lfg")
+
+[connection signal="input_event" from="PlayerArea2D" to="." method="_on_comp_controlled_player_area_2d_input_event"]

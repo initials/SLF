@@ -1,8 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqy704us7na27"]
+[gd_scene load_steps=4 format=3 uid="uid://bqy704us7na27"]
 
 [ext_resource type="PackedScene" uid="uid://cs30r3m8y8v5h" path="res://nodes/Crate.tscn" id="1_7umdk"]
+[ext_resource type="PackedScene" uid="uid://b8ttl4c7dfhcy" path="res://Level.tscn" id="2_bie3g"]
+[ext_resource type="Script" path="res://LevelCam.gd" id="3_7h3nc"]
 
 [node name="Level2" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource("1_7umdk")]
 position = Vector2(70, 60)
+
+[node name="Level1" parent="." instance=ExtResource("2_bie3g")]
+position = Vector2(-450, -230)
+
+[node name="Level2" parent="." instance=ExtResource("2_bie3g")]
+position = Vector2(-230, -90)
+scale = Vector2(0.5, 0.5)
+
+[node name="LevelCam" type="Camera2D" parent="."]
+position = Vector2(100, 200)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("3_7h3nc")

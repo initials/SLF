@@ -10,6 +10,7 @@ func teleport():
 	#print("Andre Teleport")
 	super.teleport()
 	
-#func _physics_process(delta):
-	#super._physics_process(delta)
-	#
+func _on_comp_controlled_player_area_2d_input_event(viewport, event, shape_idx):
+	super._on_comp_controlled_player_area_2d_input_event(viewport, event, shape_idx)
+
+

@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://7owossrqskbs"]
+[gd_scene load_steps=15 format=3 uid="uid://7owossrqskbs"]
 
 [ext_resource type="Script" path="res://nodes/Characters/Army.gd" id="1_5ymaa"]
 [ext_resource type="Texture2D" uid="uid://d3im2r2cd5531" path="res://sprites/Army.png" id="3_b8oqu"]
+[ext_resource type="AudioStream" uid="uid://sweck2g003gf" path="res://Sounds/SndExp.mp3" id="3_gxomb"]
+[ext_resource type="AudioStream" uid="uid://bigphfa2740dd" path="res://Sounds/SndTalk.wav" id="4_wwqcr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6f2iv"]
 atlas = ExtResource("3_b8oqu")
@@ -98,5 +100,11 @@ shape = SubResource("RectangleShape2D_11y5g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea2D"]
 position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_nidpc")
+
+[node name="SndStop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gxomb")
+
+[node name="SndGo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wwqcr")
 
 [connection signal="input_event" from="PlayerArea2D" to="." method="_on_comp_controlled_player_area_2d_input_event"]

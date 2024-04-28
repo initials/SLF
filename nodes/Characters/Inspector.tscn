@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmmiu3w1oqk0m"]
+[gd_scene load_steps=15 format=3 uid="uid://cmmiu3w1oqk0m"]
 
 [ext_resource type="Texture2D" uid="uid://yynfxm01d3tg" path="res://sprites/Inspector.png" id="1_cc0vc"]
 [ext_resource type="Script" path="res://nodes/Characters/Inspector.gd" id="1_w5j2a"]
+[ext_resource type="AudioStream" uid="uid://sweck2g003gf" path="res://Sounds/SndExp.mp3" id="3_ns14e"]
+[ext_resource type="AudioStream" uid="uid://bigphfa2740dd" path="res://Sounds/SndTalk.wav" id="4_wq7qj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t73gj"]
 atlas = ExtResource("1_cc0vc")
@@ -74,7 +76,7 @@ animations = [{
 size = Vector2(6, 10)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ca617"]
-radius = 4.0
+radius = 9.21954
 
 [node name="Inspector" type="CharacterBody2D"]
 script = ExtResource("1_w5j2a")
@@ -92,5 +94,13 @@ shape = SubResource("RectangleShape2D_11y5g")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -13)
+position = Vector2(1, -9)
 shape = SubResource("CircleShape2D_ca617")
+
+[node name="SndStop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ns14e")
+
+[node name="SndGo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wq7qj")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_comp_controlled_player_area_2d_input_event"]
