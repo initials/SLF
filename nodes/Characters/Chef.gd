@@ -6,7 +6,7 @@ func _init():
 	
 	
 func _ready():
-	pass # Replace with function body.
+	super._ready()
 
 
 

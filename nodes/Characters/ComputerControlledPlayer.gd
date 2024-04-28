@@ -7,12 +7,14 @@ var JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 1
 
+func _ready():
+	velocity.x = direction * SPEED
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
+	
 	# Handle jump.
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		#velocity.y = JUMP_VELOCITY
@@ -30,13 +32,15 @@ func _physics_process(delta):
 		direction *= -1
 		position.x = 1
 		#$SndTalk.play()
+		velocity.x = direction * SPEED
 		
 	if (position.x > sizeX-10):
 		direction *= -1
 		position.x = sizeX - 15
 		#$SndTalk.play()
+		velocity.x = direction * SPEED
 		
-	velocity.x = direction * SPEED
+	
 	#if direction:
 		#velocity.x = direction * SPEED
 	#else:
@@ -47,11 +51,12 @@ func _physics_process(delta):
 	var push_force = 5
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
+		
 		if c.get_collider() is RigidBody2D:
+			print (c.get_collider().name)
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 			
-func _ready():
-	pass
+
 
 
  #Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -74,8 +79,19 @@ func _process(delta):
 	#move_and_slide()
 	
 func teleport():
-	print ("Teleport", self.name)
+	pass
+	#print ("Teleport", self.name)
 
 
+func _on_comp_controlled_player_area_2d_input_event(viewport, event, shape_idx):
+
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		print ("xxx _on_comp_controlled_player_area_2d_input_event", viewport, event, shape_idx)
+		if (velocity.x == 0):
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = 0
 
 
+func _on_input_event(viewport, event, shape_idx):
+	print ("_on_input_event", viewport, event, shape_idx)

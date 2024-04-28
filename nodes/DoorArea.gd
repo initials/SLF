@@ -24,7 +24,7 @@ func _on_mouse_entered():
 	print ("_on_mouse_entered")
 	
 func _on_area_entered(area):
-	print (area.get_parent().name, " entered door")
+	#print (area.get_parent().name, " entered door")
 	if _door_is_open() && self.name != "LDoorTop" && self.name != "RDoorTop":
 		var prefix = "L"
 		if (position.x > get_viewport().size.x / 2):

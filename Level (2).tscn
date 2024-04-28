@@ -1,0 +1,131 @@
+[gd_scene load_steps=17 format=3 uid="uid://b67ns0nye8og1"]
+
+[ext_resource type="Script" path="res://Level.gd" id="1_26y84"]
+[ext_resource type="PackedScene" uid="uid://dawjj77ig30j1" path="res://BackgroundTileMap.tscn" id="2_wx2ja"]
+[ext_resource type="PackedScene" uid="uid://cbegfounfd2ob" path="res://nodes/Door.tscn" id="3_wwwn2"]
+[ext_resource type="PackedScene" uid="uid://dyjcrux3l3peb" path="res://nodes/Tilemap.tscn" id="4_dle6l"]
+[ext_resource type="PackedScene" uid="uid://7owossrqskbs" path="res://nodes/Characters/Army.tscn" id="5_and3s"]
+[ext_resource type="PackedScene" uid="uid://crkb3t4vdifbb" path="res://nodes/Characters/Liselot.tscn" id="6_adygb"]
+[ext_resource type="PackedScene" uid="uid://gxdy2jl5gogh" path="res://nodes/Characters/Worker.tscn" id="7_k3ihn"]
+[ext_resource type="PackedScene" uid="uid://bn8uravhxqxhc" path="res://nodes/Characters/Chef.tscn" id="8_p6mdr"]
+[ext_resource type="PackedScene" uid="uid://ud07ruolpycm" path="res://nodes/Characters/Andre.tscn" id="9_3a5od"]
+[ext_resource type="PackedScene" uid="uid://bxloyfxpcyrx2" path="res://nodes/MovingBlocks/MovingBlock.tscn" id="10_6xhcl"]
+[ext_resource type="Texture2D" uid="uid://sx0xv33ddv6s" path="res://sprites/light.png" id="11_7ey3a"]
+[ext_resource type="PackedScene" uid="uid://qshy3234ibod" path="res://nodes/SugarBag.tscn" id="12_xe2we"]
+[ext_resource type="PackedScene" uid="uid://cmmiu3w1oqk0m" path="res://nodes/Characters/Inspector.tscn" id="13_07vbr"]
+[ext_resource type="Script" path="res://Score.gd" id="14_unwyl"]
+[ext_resource type="PackedScene" uid="uid://cs30r3m8y8v5h" path="res://nodes/Crate.tscn" id="15_ere8a"]
+
+[sub_resource type="GDScript" id="GDScript_p1m3o"]
+script/source = "extends \"res://nodes/Characters/ComputerControlledPlayer.gd\"
+
+func _init():
+	SPEED=35
+	
+func _ready():
+	pass # Replace with function body.
+
+
+
+
+"
+
+[node name="Level1" type="Node2D"]
+modulate = Color(0.890196, 0.878431, 0.8, 1)
+self_modulate = Color(0.890196, 0.878431, 0.8, 1)
+script = ExtResource("1_26y84")
+metadata/_edit_vertical_guides_ = [898.0, 57.0]
+
+[node name="BackgroundTileMap" parent="." instance=ExtResource("2_wx2ja")]
+position = Vector2(0, -20)
+
+[node name="LDoorTop" parent="." instance=ExtResource("3_wwwn2")]
+position = Vector2(44, 91)
+
+[node name="RDoorTop" parent="." instance=ExtResource("3_wwwn2")]
+position = Vector2(925, 90)
+
+[node name="Door2" parent="." instance=ExtResource("3_wwwn2")]
+position = Vector2(44, 520)
+
+[node name="Door3" parent="." instance=ExtResource("3_wwwn2")]
+position = Vector2(923, 520)
+
+[node name="Level-first" parent="." instance=ExtResource("4_dle6l")]
+position = Vector2(0, 0)
+
+[node name="Army" parent="." instance=ExtResource("5_and3s")]
+position = Vector2(299, 249)
+scale = Vector2(2, 2)
+
+[node name="Liselot" parent="." groups=["Characters"] instance=ExtResource("6_adygb")]
+position = Vector2(755, 508)
+scale = Vector2(2, 2)
+script = SubResource("GDScript_p1m3o")
+
+[node name="Worker" parent="." instance=ExtResource("7_k3ihn")]
+position = Vector2(469, 255)
+scale = Vector2(2, 2)
+collision_layer = 0
+
+[node name="Chef" parent="." groups=["Characters"] instance=ExtResource("8_p6mdr")]
+position = Vector2(201, 517)
+scale = Vector2(2, 2)
+collision_layer = 0
+
+[node name="Andre" parent="." groups=["Characters"] instance=ExtResource("9_3a5od")]
+position = Vector2(408, 485)
+scale = Vector2(2, 2)
+collision_layer = 0
+
+[node name="MovingBlock" parent="." instance=ExtResource("10_6xhcl")]
+position = Vector2(480, 300)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+position = Vector2(3.05176e-05, -7.62939e-06)
+color = Color(0.729412, 0.729412, 0.729412, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="CanvasModulate"]
+position = Vector2(429, 24)
+rotation = -5.57633
+scale = Vector2(2, 2)
+energy = 0.2
+range_z_min = 0
+range_z_max = 1025
+range_layer_max = 127
+shadow_enabled = true
+shadow_color = Color(1, 1, 1, 0.0941176)
+max_distance = 1935.0
+
+[node name="PointLight2D" type="PointLight2D" parent="CanvasModulate"]
+visible = false
+position = Vector2(70, 57)
+scale = Vector2(0.3238, 0.326823)
+texture = ExtResource("11_7ey3a")
+texture_scale = 0.75
+
+[node name="SugarBag" parent="." instance=ExtResource("12_xe2we")]
+position = Vector2(532, 264)
+
+[node name="SugarBag2" parent="." instance=ExtResource("12_xe2we")]
+position = Vector2(429, 264)
+
+[node name="Inspector" parent="." instance=ExtResource("13_07vbr")]
+position = Vector2(616, 459)
+scale = Vector2(2, 2)
+collision_layer = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 93.0
+offset_top = 8.0
+offset_right = 308.0
+offset_bottom = 48.0
+text = "score Global.score"
+script = ExtResource("14_unwyl")
+
+[node name="Crate" parent="." instance=ExtResource("15_ere8a")]
+position = Vector2(680, 250)
+
+[node name="Crate2" parent="." instance=ExtResource("15_ere8a")]
+position = Vector2(50, 250)

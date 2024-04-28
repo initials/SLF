@@ -4,9 +4,10 @@ func _init():
 	SPEED=64
 	
 func _ready():
-	pass # Replace with function body.
+	super._ready()
 
 
 
-
+func _on_comp_controlled_player_area_2d_input_event(viewport, event, shape_idx):
+	super._on_comp_controlled_player_area_2d_input_event(viewport, event, shape_idx)
 

@@ -77,7 +77,7 @@ animations = [{
 size = Vector2(6, 10)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nidpc"]
-radius = 4.0
+radius = 14.0357
 
 [node name="Army" type="CharacterBody2D"]
 collision_layer = 0
@@ -93,8 +93,10 @@ autoplay = "idle"
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_11y5g")
 
-[node name="ArmyArea2D" type="Area2D" parent="."]
+[node name="PlayerArea2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmyArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea2D"]
 position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_nidpc")
+
+[connection signal="input_event" from="PlayerArea2D" to="." method="_on_comp_controlled_player_area_2d_input_event"]

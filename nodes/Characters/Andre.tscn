@@ -1,7 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://ud07ruolpycm"]
+[gd_scene load_steps=36 format=3 uid="uid://ud07ruolpycm"]
 
 [ext_resource type="Texture2D" uid="uid://38rjytv6ocor" path="res://sprites/andre.png" id="1_acdj1"]
 [ext_resource type="Script" path="res://nodes/Characters/Andre.gd" id="1_txa0f"]
+[ext_resource type="Script" path="res://nodes/Characters/CompControlledPlayerArea2D.gd" id="3_663xg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu86n"]
 atlas = ExtResource("1_acdj1")
@@ -246,8 +247,9 @@ autoplay = "idle"
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_11y5g")
 
-[node name="AndreArea2D" type="Area2D" parent="."]
+[node name="PlayerArea2D" type="Area2D" parent="."]
+script = ExtResource("3_663xg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AndreArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea2D"]
 position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_wo2su")

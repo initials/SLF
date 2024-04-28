@@ -4,8 +4,12 @@ func _init():
 	SPEED=75
 	
 func _ready():
-	pass # Replace with function body.
+	super._ready()
 
 func teleport():
 	#print("Andre Teleport")
 	super.teleport()
+	
+#func _physics_process(delta):
+	#super._physics_process(delta)
+	#
