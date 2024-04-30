@@ -15,33 +15,14 @@
 [ext_resource type="PackedScene" uid="uid://cbegfounfd2ob" path="res://nodes/Door.tscn" id="13_7wmiw"]
 [ext_resource type="PackedScene" uid="uid://cmmiu3w1oqk0m" path="res://nodes/Characters/Inspector.tscn" id="13_rrp52"]
 [ext_resource type="Script" path="res://Score.gd" id="15_davs0"]
-[ext_resource type="Shader" path="res://TVNoise.gdshader" id="16_ks0mf"]
 [ext_resource type="Texture2D" uid="uid://c5eh675vy46et" path="res://sprites/sugarBags.png" id="17_daihu"]
 [ext_resource type="PackedScene" uid="uid://cyyaijg55vyj2" path="res://nodes/MovingBlocks/ConveyorBelt.tscn" id="18_7rimc"]
+[ext_resource type="Shader" path="res://Shaders/VerticalInterrupt.gdshader" id="18_rl8ce"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yesyk"]
-shader = ExtResource("16_ks0mf")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.095
-shader_parameter/scanlines_width = 0.0
-shader_parameter/grille_opacity = 0.148
-shader_parameter/resolution = Vector2(960, 540)
-shader_parameter/pixelate = false
-shader_parameter/roll = false
-shader_parameter/roll_speed = 8.0
-shader_parameter/roll_size = 11.449
-shader_parameter/roll_variation = 1.8
-shader_parameter/distort_intensity = 0.05
-shader_parameter/noise_opacity = 0.4
-shader_parameter/noise_speed = 4.46
-shader_parameter/static_noise_intensity = 0.0
-shader_parameter/aberration = -0.015
-shader_parameter/brightness = 1.175
-shader_parameter/discolor = true
-shader_parameter/warp_amount = 1.0
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.86
-shader_parameter/vignette_opacity = 0.656
+shader = ExtResource("18_rl8ce")
+shader_parameter/time_factor = 4.0
+shader_parameter/amplitude = Vector2(0.1, 5)
 
 [node name="Level1" type="Node2D"]
 modulate = Color(0.890196, 0.878431, 0.8, 1)
@@ -142,14 +123,6 @@ position = Vector2(50, 250)
 position = Vector2(120, 490)
 scale = Vector2(2, 2)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_yesyk")
-offset_top = -20.0
-offset_right = 970.0
-offset_bottom = 540.0
-mouse_filter = 2
-
 [node name="SugarBags" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.54902)
 position = Vector2(180, 260)
@@ -157,3 +130,10 @@ texture = ExtResource("17_daihu")
 
 [node name="ConveyorBelt" parent="." instance=ExtResource("18_7rimc")]
 position = Vector2(260, 180)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_yesyk")
+offset_top = -20.0
+offset_right = 970.0
+offset_bottom = 540.0
+mouse_filter = 2
