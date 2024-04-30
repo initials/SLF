@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b8ttl4c7dfhcy"]
+[gd_scene load_steps=21 format=3 uid="uid://b8ttl4c7dfhcy"]
 
 [ext_resource type="PackedScene" uid="uid://dawjj77ig30j1" path="res://BackgroundTileMap.tscn" id="1_ayi1p"]
 [ext_resource type="PackedScene" uid="uid://bn8uravhxqxhc" path="res://nodes/Characters/Chef.tscn" id="1_qs2w3"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://c5eh675vy46et" path="res://sprites/sugarBags.png" id="17_daihu"]
 [ext_resource type="PackedScene" uid="uid://cyyaijg55vyj2" path="res://nodes/MovingBlocks/ConveyorBelt.tscn" id="18_7rimc"]
 [ext_resource type="Shader" path="res://Shaders/VerticalInterrupt.gdshader" id="18_rl8ce"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_meh1r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yesyk"]
 shader = ExtResource("18_rl8ce")
@@ -53,6 +55,7 @@ position = Vector2(299, 249)
 scale = Vector2(2, 2)
 
 [node name="Worker" parent="." instance=ExtResource("10_xereg")]
+material = SubResource("ShaderMaterial_meh1r")
 position = Vector2(469, 255)
 scale = Vector2(2, 2)
 collision_layer = 0
@@ -132,6 +135,7 @@ texture = ExtResource("17_daihu")
 position = Vector2(260, 180)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_yesyk")
 offset_top = -20.0
 offset_right = 970.0
