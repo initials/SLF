@@ -100,6 +100,9 @@ texture_scale = 0.75
 [node name="SugarBag" parent="." instance=ExtResource("8_tca88")]
 position = Vector2(532, 264)
 
+[node name="SugarBag" parent="SugarBag" instance=ExtResource("8_tca88")]
+position = Vector2(532, 264)
+
 [node name="SugarBag2" parent="." instance=ExtResource("8_tca88")]
 position = Vector2(429, 264)
 
@@ -142,3 +145,9 @@ offset_top = -20.0
 offset_right = 970.0
 offset_bottom = 540.0
 mouse_filter = 2
+
+[node name="MovingBlock2" parent="." instance=ExtResource("5_i64wt")]
+position = Vector2(680, 20)
+
+[node name="MovingBlock3" parent="." instance=ExtResource("5_i64wt")]
+position = Vector2(350, 20)

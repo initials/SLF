@@ -1,12 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdxrkqt11il2l"]
+[gd_scene load_steps=7 format=3 uid="uid://bdxrkqt11il2l"]
 
 [ext_resource type="Shader" path="res://Shaders/PointBurst.gdshader" id="1_jbgxi"]
 [ext_resource type="Script" path="res://nodes/PointBurst.gd" id="1_tkwcq"]
 
+[sub_resource type="Animation" id="Animation_ooaab"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(0.466517, 1, 0.574349),
+"update": 0,
+"values": [Vector2(5.13, 5.13), Vector2(0.5, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fdcs6"]
+_data = {
+"new_animation": SubResource("Animation_ooaab")
+}
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3umfu"]
 shader = ExtResource("1_jbgxi")
-shader_parameter/time_factor = 1.0
-shader_parameter/amplitude = Vector2(0.5, 0.5)
 
 [sub_resource type="SystemFont" id="SystemFont_60r2c"]
 font_names = PackedStringArray("Amiga Forever")
@@ -14,11 +32,20 @@ font_names = PackedStringArray("Amiga Forever")
 [node name="PointBurst" type="Node2D"]
 script = ExtResource("1_tkwcq")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fdcs6")
+}
+autoplay = "new_animation"
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 material = SubResource("ShaderMaterial_3umfu")
-offset_right = 600.0
-offset_bottom = 50.0
+offset_left = -12.4424
+offset_top = -3.68664
+offset_right = 77.5576
+offset_bottom = 26.3134
 theme_override_fonts/normal_font = SubResource("SystemFont_60r2c")
+theme_override_font_sizes/normal_font_size = 8
 text = "500"
 scroll_active = false
 tab_size = 1
