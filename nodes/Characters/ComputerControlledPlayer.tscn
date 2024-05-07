@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ce4uyl01xg4om"]
+[gd_scene load_steps=47 format=3 uid="uid://ce4uyl01xg4om"]
 
 [ext_resource type="Script" path="res://nodes/Characters/ComputerControlledPlayer.gd" id="1_ijkp2"]
 [ext_resource type="Texture2D" uid="uid://38rjytv6ocor" path="res://sprites/andre.png" id="1_irnp8"]
@@ -144,6 +144,26 @@ region = Rect2(100, 0, 25, 40)
 atlas = ExtResource("1_irnp8")
 region = Rect2(125, 0, 25, 40)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4eam"]
+atlas = ExtResource("1_irnp8")
+region = Rect2(0, 0, 62, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t2se"]
+atlas = ExtResource("1_irnp8")
+region = Rect2(62, 0, 62, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0easx"]
+atlas = ExtResource("1_irnp8")
+region = Rect2(62, 60, 62, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e3dr"]
+atlas = ExtResource("1_irnp8")
+region = Rect2(124, 60, 62, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvblp"]
+atlas = ExtResource("1_irnp8")
+region = Rect2(124, 120, 62, 60)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_4irac"]
 animations = [{
 "frames": [{
@@ -273,6 +293,26 @@ animations = [{
 "loop": true,
 "name": &"run-old",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4eam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2t2se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0easx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e3dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvblp")
+}],
+"loop": true,
+"name": &"work",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njddl"]
@@ -288,9 +328,8 @@ script = ExtResource("1_ijkp2")
 visible = false
 position = Vector2(0, -12.5)
 sprite_frames = SubResource("SpriteFrames_4irac")
-animation = &"run"
+animation = &"work"
 autoplay = "idle"
-frame_progress = 0.647366
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)

@@ -42,3 +42,4 @@ func _on_sugar_bag_area_2d_area_entered(area):
 		$Magic.play("reverse")	
 		$Collected.play()
 		get_node("SugarSprite2D").visible = 0
+		get_parent().create_point_burst(position.x, position.y)

@@ -1,13 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cs30r3m8y8v5h"]
+[gd_scene load_steps=5 format=3 uid="uid://cs30r3m8y8v5h"]
 
 [ext_resource type="Script" path="res://nodes/Crate.gd" id="1_6amhu"]
 [ext_resource type="Texture2D" uid="uid://brvy2ovd246c1" path="res://sprites/crates/LargeCrate.png" id="1_8t872"]
-[ext_resource type="Shader" path="res://Shaders/VerticalSpriteInterrupt.gdshader" id="2_3miv3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wrwk8"]
-shader = ExtResource("2_3miv3")
-shader_parameter/time_factor = 4.0
-shader_parameter/amplitude = Vector2(0.5, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lqa1"]
 size = Vector2(80, 60)
@@ -24,5 +20,6 @@ texture = ExtResource("1_8t872")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CrateArea2D"]
 shape = SubResource("RectangleShape2D_0lqa1")
 
+[connection signal="area_entered" from="CrateArea2D" to="." method="_on_crate_area_2d_area_entered"]
 [connection signal="input_event" from="CrateArea2D" to="." method="_on_crate_area_2d_input_event"]
 [connection signal="mouse_entered" from="CrateArea2D" to="." method="_on_crate_area_2d_mouse_entered"]

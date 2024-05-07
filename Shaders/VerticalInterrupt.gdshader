@@ -1,7 +1,8 @@
 shader_type canvas_item;
 
 
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_nearest;
+uniform sampler2D filter_off : filter_nearest;
 
 uniform float time_factor = 1.0;
 uniform vec2 amplitude = vec2(0.5,0.5);
@@ -15,7 +16,7 @@ void fragment() {
 	
 	vec2 offset_uv = SCREEN_UV;
 	offset_uv.x += -0.5 + (cos((TIME + offset_uv.y) * time_factor) * amplitude.x);
-	//offset_uv.y += (sin(TIME * time_factor) * amplitude.y);
+	offset_uv.y = 0.0;
 	
 	COLOR = texture(SCREEN_TEXTURE, SCREEN_UV+offset_uv); // Read from texture
 	

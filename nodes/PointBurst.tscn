@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdxrkqt11il2l"]
+
+[ext_resource type="Shader" path="res://Shaders/PointBurst.gdshader" id="1_jbgxi"]
+[ext_resource type="Script" path="res://nodes/PointBurst.gd" id="1_tkwcq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3umfu"]
+shader = ExtResource("1_jbgxi")
+shader_parameter/time_factor = 1.0
+shader_parameter/amplitude = Vector2(0.5, 0.5)
+
+[sub_resource type="SystemFont" id="SystemFont_60r2c"]
+font_names = PackedStringArray("Amiga Forever")
+
+[node name="PointBurst" type="Node2D"]
+script = ExtResource("1_tkwcq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+material = SubResource("ShaderMaterial_3umfu")
+offset_right = 600.0
+offset_bottom = 50.0
+theme_override_fonts/normal_font = SubResource("SystemFont_60r2c")
+text = "500"
+scroll_active = false
+tab_size = 1
+meta_underlined = false
+hint_underlined = false

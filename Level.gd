@@ -3,13 +3,19 @@ extends Node2D
 var c = preload("res://nodes/Crate.tscn")
 var sugar = preload("res://nodes/SugarBag.tscn")
 var magic = preload("res://nodes/Magic.tscn")
+var pb = preload("res://nodes/PointBurst.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
-
+func create_point_burst(x,y):
+	var p = pb.instantiate()
+	p.position.x = x
+	p.position.y = y
+	
+	call_deferred("add_child", p)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

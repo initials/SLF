@@ -136,6 +136,7 @@ position = Vector2(260, 180)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
+texture_filter = 2
 material = SubResource("ShaderMaterial_yesyk")
 offset_top = -20.0
 offset_right = 970.0

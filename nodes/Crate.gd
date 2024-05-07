@@ -21,3 +21,7 @@ func _on_crate_area_2d_mouse_entered():
 func _on_crate_area_2d_input_event(viewport, event, shape_idx):
 	#print ("_on_crate_area_2d_input_event", viewport, event, shape_idx)
 	pass
+
+
+func _on_crate_area_2d_area_entered(area):
+	print(area.name)
