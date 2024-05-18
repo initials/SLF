@@ -10,7 +10,7 @@ func _ready():
 
 
 func _on_character_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	print(event)
+	print("Collisionevent2d", event)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

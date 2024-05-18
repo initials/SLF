@@ -39,7 +39,8 @@ func _on_sugar_bag_area_2d_area_entered(area):
 	#print("***", self.get_child(0).name, " ", area.name)
 	if area.name != "SugarBagArea2D":
 		Global.score += 1
-		$Magic.play("reverse")	
+		$Magic.play("reverse")
+		$Collected.volume_db = -20
 		$Collected.play()
 		get_node("SugarSprite2D").visible = 0
 		get_parent().create_point_burst(position.x, position.y)

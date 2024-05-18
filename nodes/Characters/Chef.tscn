@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://nodes/Characters/Chef.gd" id="1_txa0f"]
 [ext_resource type="Texture2D" uid="uid://bt1j5wlbc8nt1" path="res://sprites/Chef.png" id="2_i1syo"]
-[ext_resource type="AudioStream" uid="uid://sweck2g003gf" path="res://Sounds/SndExp.mp3" id="3_vojw7"]
-[ext_resource type="AudioStream" uid="uid://bigphfa2740dd" path="res://Sounds/SndTalk.wav" id="4_miwvx"]
+[ext_resource type="AudioStream" uid="uid://b6stx0mbigqv2" path="res://Sounds/switchDown.mp3" id="3_bjlci"]
+[ext_resource type="AudioStream" uid="uid://4c8ohat34emd" path="res://Sounds/switchUp.mp3" id="4_iu0v4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_moxsg"]
 atlas = ExtResource("2_i1syo")
@@ -98,9 +98,11 @@ position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_aotjc")
 
 [node name="SndStop" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_vojw7")
+stream = ExtResource("3_bjlci")
+volume_db = -10.0
 
 [node name="SndGo" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_miwvx")
+stream = ExtResource("4_iu0v4")
+volume_db = -10.0
 
 [connection signal="input_event" from="ChefArea2D" to="." method="_on_comp_controlled_player_area_2d_input_event"]

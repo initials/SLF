@@ -21,7 +21,7 @@ func _process(delta):
 				#body.get_parent().position = pos
 
 func _on_mouse_entered():
-	print ("_on_mouse_entered")
+	print ("Computer controlled player ", "_on_mouse_entered")
 	
 func _on_area_entered(area):
 	#print (area.get_parent().name, " entered door")

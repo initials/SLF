@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://38rjytv6ocor" path="res://sprites/andre.png" id="1_acdj1"]
 [ext_resource type="Script" path="res://nodes/Characters/Andre.gd" id="1_txa0f"]
-[ext_resource type="AudioStream" uid="uid://bigphfa2740dd" path="res://Sounds/SndTalk.wav" id="3_b4lfg"]
-[ext_resource type="AudioStream" uid="uid://sweck2g003gf" path="res://Sounds/SndExp.mp3" id="3_b6pyf"]
+[ext_resource type="AudioStream" uid="uid://b6stx0mbigqv2" path="res://Sounds/switchDown.mp3" id="3_sq2yf"]
+[ext_resource type="AudioStream" uid="uid://4c8ohat34emd" path="res://Sounds/switchUp.mp3" id="4_dsl0n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu86n"]
 atlas = ExtResource("1_acdj1")
@@ -244,20 +244,24 @@ sprite_frames = SubResource("SpriteFrames_qvb74")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="AndreCollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_11y5g")
 
-[node name="PlayerArea2D" type="Area2D" parent="."]
+[node name="AndreArea2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea2D"]
+[node name="AndreCollisionShape2D" type="CollisionShape2D" parent="AndreArea2D"]
 position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_wo2su")
 
 [node name="SndStop" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_b6pyf")
+stream = ExtResource("3_sq2yf")
+volume_db = -10.0
 
 [node name="SndGo" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_b4lfg")
+stream = ExtResource("4_dsl0n")
+volume_db = -10.0
 
-[connection signal="input_event" from="PlayerArea2D" to="." method="_on_comp_controlled_player_area_2d_input_event"]
+[connection signal="input_event" from="AndreArea2D" to="." method="_on_comp_controlled_player_area_2d_input_event"]
+[connection signal="mouse_entered" from="AndreArea2D" to="." method="_on_player_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="AndreArea2D" to="." method="_on_player_area_2d_mouse_exited"]

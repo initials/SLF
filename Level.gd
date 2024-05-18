@@ -19,7 +19,7 @@ func create_point_burst(x,y):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (randf()<0.02):
+	if (randf()<0.005):
 		create_sugar_bag()
 		
 

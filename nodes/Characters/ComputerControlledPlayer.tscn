@@ -342,3 +342,5 @@ position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_x710x")
 
 [connection signal="input_event" from="PlayerArea2D" to="." method="_on_comp_controlled_player_area_2d_input_event"]
+[connection signal="mouse_entered" from="PlayerArea2D" to="." method="_on_player_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerArea2D" to="." method="_on_player_area_2d_mouse_exited"]

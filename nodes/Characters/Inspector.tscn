@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://yynfxm01d3tg" path="res://sprites/Inspector.png" id="1_cc0vc"]
 [ext_resource type="Script" path="res://nodes/Characters/Inspector.gd" id="1_w5j2a"]
-[ext_resource type="AudioStream" uid="uid://sweck2g003gf" path="res://Sounds/SndExp.mp3" id="3_ns14e"]
-[ext_resource type="AudioStream" uid="uid://bigphfa2740dd" path="res://Sounds/SndTalk.wav" id="4_wq7qj"]
+[ext_resource type="AudioStream" uid="uid://b6stx0mbigqv2" path="res://Sounds/switchDown.mp3" id="3_dqbq8"]
+[ext_resource type="AudioStream" uid="uid://4c8ohat34emd" path="res://Sounds/switchUp.mp3" id="4_bowte"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t73gj"]
 atlas = ExtResource("1_cc0vc")
@@ -98,9 +98,11 @@ position = Vector2(1, -9)
 shape = SubResource("CircleShape2D_ca617")
 
 [node name="SndStop" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_ns14e")
+stream = ExtResource("3_dqbq8")
+volume_db = -10.0
 
 [node name="SndGo" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_wq7qj")
+stream = ExtResource("4_bowte")
+volume_db = -10.0
 
 [connection signal="input_event" from="Area2D" to="." method="_on_comp_controlled_player_area_2d_input_event"]

@@ -24,4 +24,4 @@ func _on_crate_area_2d_input_event(viewport, event, shape_idx):
 
 
 func _on_crate_area_2d_area_entered(area):
-	print(area.name)
+	print(" ! Crate -- ", area.name)

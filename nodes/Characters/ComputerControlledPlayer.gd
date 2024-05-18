@@ -7,6 +7,8 @@ var JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 1
 
+var customAnimation = ""
+
 func _ready():
 	velocity.x = direction * SPEED
 
@@ -61,7 +63,9 @@ func _physics_process(delta):
 
  #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (velocity.y < 0):
+	if (customAnimation!=""):
+		$CharacterAnimations.play(customAnimation)
+	elif (velocity.y < 0):
 		$CharacterAnimations.play("jump")
 	elif (abs(velocity.x) > 0):
 		$CharacterAnimations.play("run")
@@ -84,7 +88,9 @@ func teleport():
 
 
 func _on_comp_controlled_player_area_2d_input_event(viewport, event, shape_idx):
+	#print(viewport, event, shape_idx)
 	
+	### Click
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		#print ("xxx _on_comp_controlled_player_area_2d_input_event", viewport, event, shape_idx)
 		if (velocity.x == 0):
@@ -99,3 +105,11 @@ func _on_comp_controlled_player_area_2d_input_event(viewport, event, shape_idx):
 
 func _on_input_event(viewport, event, shape_idx):
 	print ("_on_input_event", viewport, event, shape_idx)
+
+
+func _on_player_area_2d_mouse_entered():
+	modulate = Color(1.2,1.2,1.2)
+
+
+func _on_player_area_2d_mouse_exited():
+	modulate = Color(1,1,1)

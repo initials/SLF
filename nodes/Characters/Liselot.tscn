@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://nodes/Characters/Liselot.gd" id="1_6bqic"]
 [ext_resource type="Texture2D" uid="uid://c4o67tupypjex" path="res://sprites/liselot.png" id="2_w6lau"]
-[ext_resource type="AudioStream" uid="uid://sweck2g003gf" path="res://Sounds/SndExp.mp3" id="3_ns8sx"]
-[ext_resource type="AudioStream" uid="uid://bigphfa2740dd" path="res://Sounds/SndTalk.wav" id="4_m2htu"]
+[ext_resource type="AudioStream" uid="uid://b6stx0mbigqv2" path="res://Sounds/switchDown.mp3" id="3_60r28"]
+[ext_resource type="AudioStream" uid="uid://4c8ohat34emd" path="res://Sounds/switchUp.mp3" id="4_wa4af"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vvy7k"]
 atlas = ExtResource("2_w6lau")
@@ -239,9 +239,11 @@ position = Vector2(-1, -10)
 shape = SubResource("CircleShape2D_4vdps")
 
 [node name="SndStop" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_ns8sx")
+stream = ExtResource("3_60r28")
+volume_db = -10.0
 
 [node name="SndGo" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_m2htu")
+stream = ExtResource("4_wa4af")
+volume_db = -10.0
 
 [connection signal="input_event" from="Area2D" to="." method="_on_comp_controlled_player_area_2d_input_event"]
